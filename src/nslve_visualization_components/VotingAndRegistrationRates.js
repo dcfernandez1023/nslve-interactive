@@ -96,16 +96,34 @@ const VotingAndRegistrationRates = () => {
                             <Tooltip />
                             <Legend align="right" layout="vertical" verticalAlign="top" margin={{ top: 0, left: 100, right: 100, bottom: 0 }}/>
 
-                            <Bar yAxisId="left" dataKey={ENROLLMENT} stackId="a" barSize={20} fill="pink" />
-                            <Bar yAxisId="left" dataKey={ELIGIBLE} stackId="b" barSize={20} fill="purple" />
-                            <Bar yAxisId="left" dataKey={REGISTERED} stackId="c" barSize={20} fill="teal" />
-                            <Bar yAxisId="left" dataKey={VOTED} stackId="d" barSize={20} fill="brown" />
+                            <Bar yAxisId="left" dataKey={ENROLLMENT} stackId="a" barSize={20} fill="#EC7063" />
+                            <Bar yAxisId="left" dataKey={ELIGIBLE} stackId="b" barSize={20} fill="#AF7AC5" />
+                            <Bar yAxisId="left" dataKey={REGISTERED} stackId="c" barSize={20} fill="#5499C7" />
+                            <Bar yAxisId="left" dataKey={VOTED} stackId="d" barSize={20} fill="#48C9B0" />
 
-                            <Line yAxisId="right" type="monotone" dataKey={REGISTRATION_RATE} stroke="blue" />
-                            <Line yAxisId="right" type="monotone" dataKey={REGISTRATION_VOTING_RATE} stroke="orange" />
-                            <Line yAxisId="right" type="monotone" dataKey={VOTING_RATE} stroke="red" />
+                            <Line yAxisId="right" type="monotone" dataKey={REGISTRATION_RATE} stroke="#F4D03F" />
+                            <Line yAxisId="right" type="monotone" dataKey={REGISTRATION_VOTING_RATE} stroke="#DC7633" />
+                            <Line yAxisId="right" type="monotone" dataKey={VOTING_RATE} stroke="#5D6D7E" />
                         </ComposedChart>
                     </ResponsiveContainer>
+                </Col>
+            </Row>
+            <br/>
+            <Row>
+                <Col>
+                    <p>
+                        This visualization is a <strong>Grouped Bar + Line Timeline</strong> chart showing the total student <strong style={{color: "#EC7063"}}>enrollment</strong>, the number of students <strong style={{color: "#AF7AC5"}}>eligible</strong> to vote, the number of students who <strong style={{color: "#5499C7"}}>registered</strong> to vote, the number of students who <strong style={{color: "#48C9B0"}}>voted</strong>, 
+                        and the <strong style={{color: "#F4D03F"}}>registration rate</strong>, <strong style={{color: "#DC7633"}}>voting rate of registered students</strong>, and <strong style={{color: "#5D6D7E"}}>voting rate of all students</strong> in the University of San Francisco in 2016, 2018, and 2020.
+                    </p>
+                    <p>
+                        How to read this chart:
+                        <ul>
+                            <li><strong>X-axis</strong>: Each year (2016, 2018, 2020)</li>
+                            <li><strong>Left Y-axis</strong>: The number of students (values of the bars)</li>
+                            <li><strong>Right Y-axis</strong>: The rates of voting/registration (values of the lines)</li>
+                            <li><strong>Colors</strong>: The legend to the right of the chart maps color to the bars/lines in the chart</li>
+                        </ul>
+                    </p>
                 </Col>
             </Row>
         </Container>

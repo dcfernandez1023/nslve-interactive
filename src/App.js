@@ -4,13 +4,17 @@ import { useState, useEffect } from 'react';
 import { Container, Row, Col, Navbar, Dropdown, DropdownButton } from "react-bootstrap";
 import VotingAndRegistrationRates from './nslve_visualization_components/VotingAndRegistrationRates';
 import VotingByAge from './nslve_visualization_components/VotingByAge';
+import VotingByMethod from './nslve_visualization_components/VotingByMethod';
+import VotingByEthnicity from './nslve_visualization_components/VotingByEthnicity';
 import Overview from './view_components/Overview';
 
 function App() {
 
   const dropDownValues = [
     "Voting and Registration Rates",
-    "Voting by Age"
+    "Voting by Age",
+    "Voting by Method",
+    "Voting by Ethnicity"
   ];
 
   const [selectedViz, setSelectedViz] = useState("Voting and Registration Rates");
@@ -21,6 +25,12 @@ function App() {
     }
     else if(selectedViz === "Voting by Age") {
       return <VotingByAge />;
+    }
+    else if(selectedViz === "Voting by Method") {
+      return <VotingByMethod />;
+    }
+    else if(selectedViz === "Voting by Ethnicity") {
+      return <VotingByEthnicity />;
     }
     else {
       return <div>No such vizualization {selectedViz}</div>;
@@ -43,7 +53,7 @@ function App() {
       <br/>
       <br/>
 
-      <Container fluid>
+      <Container>
         <Row>
           <Col>
             <Overview />

@@ -15,7 +15,7 @@ import {
     ResponsiveContainer,
   } from 'recharts';
 
-const VotingByAge = () => {
+const VotingByEthnicity = () => {
     const YEARS = [
         2016,
         2018,
@@ -23,17 +23,20 @@ const VotingByAge = () => {
     ];
 
     const DATA = [
-        {year: 2016, ageGroup: "18-21", enrolled: 4902, voted: 1978, rate: 40},
-        {year: 2016, ageGroup: "22-24", enrolled: 1897, voted: 714, rate: 38},
+        {year: 2016, ethnicity: "Asian", enrolled: 0, voted: 0, rate: 0},
+        {year: 2016, ethnicity: "American Indian/Alaska Native", enrolled: 0, voted: 0, rate: 0},
+        {year: 2016, ethnicity: "Black", enrolled: 0, voted: 0, rate: 0},
 
-        {year: 2018, ageGroup: "18-21", enrolled: 5194, voted: 1856, rate: 36}, 
-        {year: 2018, ageGroup: "22-24", enrolled: 1699, voted: 620, rate: 36},
+        {year: 2018, ethnicity: "Asian", enrolled: 3009, voted: 784, rate: 26}, 
+        {year: 2018, ethnicity: "American Indian/Alaska Native", enrolled: 19, voted: 0, rate: 0},
+        {year: 2018, ethnicity: "Black", enrolled: 574, voted: 258, rate: 45},
 
-        {year: 2020, ageGroup: "18-21", enrolled: 4503, voted: 3066, rate: 68},
-        {year: 2020, ageGroup: "22-24", enrolled: 1821, voted: 1107, rate: 61}
+        {year: 2020, ethnicity: "Asian", enrolled: 3059, voted: 1486, rate: 49},
+        {year: 2020, ethnicity: "American Indian/Alaska Native", enrolled: 14, voted: 0, rate: 0},
+        {year: 2020, ethnicity: "Black", enrolled: 678, voted: 428, rate: 63}
     ];
 
-    const renderAgeViz = () => {
+    const renderViz = () => {
         return YEARS.map((year, index) => {
             let data = [];
             DATA.forEach((d) => {
@@ -45,9 +48,10 @@ const VotingByAge = () => {
                 <Row>
                     <Col sm={12}>
                         <div style={{textAlign: "center", fontSize: "20px"}}>Year: {year}</div>
-                        <ResponsiveContainer width="100%" height={250}>
+                        <ResponsiveContainer width="100%" height={400}>
                             <ComposedChart
                                 data={data}
+                                layout="vertical"
                                 margin={{
                                     top: 20,
                                     right: 20,
@@ -56,9 +60,11 @@ const VotingByAge = () => {
                                 }}                        
                             >
                                 <CartesianGrid stroke="#f5f5f5" />
-                                <XAxis dataKey="ageGroup" scale="band" label={index === (YEARS.length)-1 ? { value: 'Age Group', position: 'insideBottomRight', offset: -12 } : {}}/>
+                                <XAxis type="number" label={index === (YEARS.length)-1 ? { value: '# of People', position: 'insideBottomRight', offset: -15 } : {}}/>
                                 <YAxis 
-                                    label={{ value: "# of People", angle: -90, position: "insideBottomLeft" }}
+                                    dataKey="ethnicity" 
+                                    type="category" 
+                                    scale="band"
                                 />                        
                                 <Tooltip />
                                 <Legend align="right" layout="vertical" verticalAlign="top" margin={{ top: 0, left: 50, right: 100, bottom: 0 }}/>
@@ -84,20 +90,20 @@ const VotingByAge = () => {
 
             <br/>
 
-            {renderAgeViz()}
+            {renderViz()}
             <br/>
             <Row>
                 <Col>
                     <p>
-                        This visualization contains <strong>small multiples</strong> of <strong> grouped bar charts</strong> that show the number of enrolled students in each age group vs. the number of 
-                        students that voted in each age group in the University of San Francisco in 2016, 2018, and 2020. 
+                        This visualization contains <strong>small multiples</strong> of <strong>grouped bar charts</strong> that show the number of enrolled students in from ethnicity vs. the number of 
+                        students that voted from each ethnicty in the University of San Francisco in 2016, 2018, and 2020. 
                     </p>
                     <p>
                         How to read this chart:
                         <ul>
                             <li><strong>Small Multiple Grouped Bar Charts</strong>: Each of the 3 bar charts represents a year (2016, 2018, and 2020)</li>
-                            <li><strong>X-axis</strong>: Each age group of students</li>
-                            <li><strong>Y-axis</strong>: The number of students in each age group</li>
+                            <li><strong>X-axis</strong>: The number of enrolled/voted students</li>
+                            <li><strong>Y-axis</strong>: Each ethnicity</li>
                             <li><strong>Color</strong>: <strong style={{color: "#F4D03F"}}>Yellow</strong> maps to number of students <strong style={{color: "#F4D03F"}}>enrolled</strong> and <strong style={{color: "#52BE80"}}>Green</strong> maps to number of students that <strong style={{color: "#52BE80"}}>voted</strong></li>
                         </ul>
                     </p>
@@ -107,4 +113,4 @@ const VotingByAge = () => {
     );
 }
 
-export default VotingByAge;
+export default VotingByEthnicity;
