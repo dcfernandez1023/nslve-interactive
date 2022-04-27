@@ -25,12 +25,24 @@ const VotingByAge = () => {
     const DATA = [
         {year: 2016, ageGroup: "18-21", enrolled: 4902, voted: 1978, rate: 40},
         {year: 2016, ageGroup: "22-24", enrolled: 1897, voted: 714, rate: 38},
+        {year: 2016, ageGroup: "25-29", enrolled: 1860, voted: 999, rate: 54},
+        {year: 2016, ageGroup: "30-39", enrolled: 1199, voted: 711, rate: 59},
+        {year: 2016, ageGroup: "40-49", enrolled: 446, voted: 309, rate: 69},
+        {year: 2016, ageGroup: "50+", enrolled: 238, voted: 178, rate: 75},
 
         {year: 2018, ageGroup: "18-21", enrolled: 5194, voted: 1856, rate: 36}, 
         {year: 2018, ageGroup: "22-24", enrolled: 1699, voted: 620, rate: 36},
+        {year: 2018, ageGroup: "25-29", enrolled: 1782, voted: 856, rate: 48},
+        {year: 2018, ageGroup: "30-39", enrolled: 1069, voted: 574, rate: 54},
+        {year: 2018, ageGroup: "40-49", enrolled: 405, voted: 227, rate: 56},
+        {year: 2018, ageGroup: "50+", enrolled: 189, voted: 143, rate: 76},
 
         {year: 2020, ageGroup: "18-21", enrolled: 4503, voted: 3066, rate: 68},
-        {year: 2020, ageGroup: "22-24", enrolled: 1821, voted: 1107, rate: 61}
+        {year: 2020, ageGroup: "22-24", enrolled: 1821, voted: 1107, rate: 61},
+        {year: 2020, ageGroup: "25-29", enrolled: 1714, voted: 1075, rate: 63},
+        {year: 2020, ageGroup: "30-39", enrolled: 1126, voted: 722, rate: 64},
+        {year: 2020, ageGroup: "40-49", enrolled: 452, voted: 311, rate: 69},
+        {year: 2020, ageGroup: "50+", enrolled: 224, voted: 169, rate: 75}
     ];
 
     const renderAgeViz = () => {
@@ -45,7 +57,7 @@ const VotingByAge = () => {
                 <Row>
                     <Col sm={12}>
                         <div style={{textAlign: "center", fontSize: "20px"}}>Year: {year}</div>
-                        <ResponsiveContainer width="100%" height={250}>
+                        <ResponsiveContainer width="100%" height={225}>
                             <ComposedChart
                                 data={data}
                                 margin={{

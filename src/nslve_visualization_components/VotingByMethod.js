@@ -34,9 +34,9 @@ const VotingByMethod = () => {
     // ];
 
     const DATA = [
-        {year: 2016, "Early Vote": 46, "In-Person on Election Day": 1583},
-        {year: 2018, "Early Vote": 17, "In-Person on Election Day": 966}, 
-        {year: 2020, "Early Vote": 798, "In-Person on Election Day": 237},
+        {year: 2016, "Early Vote": 46, "In-Person on Election Day": 1583, "Not-In-Person": 3142, "Voting Method Unknown": 117},
+        {year: 2018, "Early Vote": 17, "In-Person on Election Day": 966, "Not-In-Person": 3039, "Voting Method Unknown": 254}, 
+        {year: 2020, "Early Vote": 798, "In-Person on Election Day": 237, "Not-In-Person": 5077, "Voting Method Unknown": 334},
     ];
 
     return (
@@ -50,7 +50,7 @@ const VotingByMethod = () => {
 
             <br/>
 
-            <ResponsiveContainer width="100%" height={400}>
+            <ResponsiveContainer width="100%" height={475}>
                 <LineChart 
                     data={DATA}
                     margin={{
@@ -67,6 +67,8 @@ const VotingByMethod = () => {
                     <Legend align="right" layout="vertical" verticalAlign="top" margin={{ top: 0, left: 100, right: 100, bottom: 0 }}/>
                     <Line type="monotone" dataKey="Early Vote" stroke="#EC7063" activeDot={{ r: 8 }} />
                     <Line type="monotone" dataKey="In-Person on Election Day" stroke="#AF7AC5" />                    
+                    <Line type="monotone" dataKey="Not-In-Person" stroke="#58D68D" />     
+                    <Line type="monotone" dataKey="Voting Method Unknown" stroke="#5DADE2" />     
                 </LineChart>
             </ResponsiveContainer>
 

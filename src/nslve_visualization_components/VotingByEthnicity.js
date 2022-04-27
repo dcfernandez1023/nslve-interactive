@@ -17,7 +17,7 @@ import {
 
 const VotingByEthnicity = () => {
     const YEARS = [
-        2016,
+        
         2018,
         2020
     ];
@@ -26,14 +26,29 @@ const VotingByEthnicity = () => {
         {year: 2016, ethnicity: "Asian", enrolled: 0, voted: 0, rate: 0},
         {year: 2016, ethnicity: "American Indian/Alaska Native", enrolled: 0, voted: 0, rate: 0},
         {year: 2016, ethnicity: "Black", enrolled: 0, voted: 0, rate: 0},
+        {year: 2016, ethnicity: "Hispanic", enrolled: 0, voted: 0, rate: 0},
+        {year: 2016, ethnicity: "Native Hawaiian/Pacific Islander", enrolled: 0, voted: 0, rate: 0},
+        {year: 2016, ethnicity: "2 or More Races", enrolled: 0, voted: 0, rate: 0},
+        {year: 2016, ethnicity: "White", enrolled: 0, voted: 0, rate: 0},
+        {year: 2016, ethnicity: "Race Unknown", enrolled: 10542, voted: 4889, rate: 46},
 
         {year: 2018, ethnicity: "Asian", enrolled: 3009, voted: 784, rate: 26}, 
         {year: 2018, ethnicity: "American Indian/Alaska Native", enrolled: 19, voted: 0, rate: 0},
         {year: 2018, ethnicity: "Black", enrolled: 574, voted: 258, rate: 45},
+        {year: 2018, ethnicity: "Hispanic", enrolled: 2297, voted: 1128, rate: 49},
+        {year: 2018, ethnicity: "Native Hawaiian/Pacific Islander", enrolled: 75, voted: 23, rate: 31},
+        {year: 2018, ethnicity: "2 or More Races", enrolled: 761, voted: 335, rate: 44},
+        {year: 2018, ethnicity: "White", enrolled: 3012, voted: 1613, rate: 54},
+        {year: 2018, ethnicity: "Race Unknown", enrolled: 591, voted: 130, rate: 22},
 
         {year: 2020, ethnicity: "Asian", enrolled: 3059, voted: 1486, rate: 49},
         {year: 2020, ethnicity: "American Indian/Alaska Native", enrolled: 14, voted: 0, rate: 0},
-        {year: 2020, ethnicity: "Black", enrolled: 678, voted: 428, rate: 63}
+        {year: 2020, ethnicity: "Black", enrolled: 678, voted: 428, rate: 63},
+        {year: 2020, ethnicity: "Hispanic", enrolled: 2178, voted: 1662, rate: 76},
+        {year: 2020, ethnicity: "Native Hawaiian/Pacific Islander", enrolled: 46, voted: 32, rate: 70},
+        {year: 2020, ethnicity: "2 or More Races", enrolled: 832, voted: 637, rate: 77},
+        {year: 2020, ethnicity: "White", enrolled: 2824, voted: 2124, rate: 75},
+        {year: 2020, ethnicity: "Race Unknown", enrolled: 209, voted: 72, rate: 34},
     ];
 
     const renderViz = () => {
@@ -45,36 +60,34 @@ const VotingByEthnicity = () => {
                 }
             });
             return (
-                <Row>
-                    <Col sm={12}>
-                        <div style={{textAlign: "center", fontSize: "20px"}}>Year: {year}</div>
-                        <ResponsiveContainer width="100%" height={400}>
-                            <ComposedChart
-                                data={data}
-                                layout="vertical"
-                                margin={{
-                                    top: 20,
-                                    right: 20,
-                                    bottom: 50,
-                                    left: 20,
-                                }}                        
-                            >
-                                <CartesianGrid stroke="#f5f5f5" />
-                                <XAxis type="number" label={index === (YEARS.length)-1 ? { value: '# of People', position: 'insideBottomRight', offset: -15 } : {}}/>
-                                <YAxis 
-                                    dataKey="ethnicity" 
-                                    type="category" 
-                                    scale="band"
-                                />                        
-                                <Tooltip />
-                                <Legend align="right" layout="vertical" verticalAlign="top" margin={{ top: 0, left: 50, right: 100, bottom: 0 }}/>
+                <Col sm={6}>
+                    <div style={{textAlign: "center", fontSize: "20px"}}>Year: {year}</div>
+                    <ResponsiveContainer width="100%" height={500}>
+                        <ComposedChart
+                            data={data}
+                            layout="vertical"
+                            margin={{
+                                top: 20,
+                                right: 20,
+                                bottom: 50,
+                                left: 20,
+                            }}                        
+                        >
+                            <CartesianGrid stroke="#f5f5f5" />
+                            <XAxis type="number" label={index === (YEARS.length)-1 ? { value: '# of People', position: 'insideBottomRight', offset: -15 } : {}}/>
+                            <YAxis 
+                                dataKey="ethnicity" 
+                                type="category" 
+                                scale="band"
+                            />                        
+                            <Tooltip />
+                            <Legend align="right" layout="vertical" verticalAlign="top" margin={{ top: 0, left: 50, right: 100, bottom: 0 }}/>
 
-                                <Bar dataKey="enrolled" barSize={20} fill="#F4D03F" />
-                                <Bar dataKey="voted" barSize={20} fill="#52BE80" />
-                            </ComposedChart>
-                        </ResponsiveContainer>
-                    </Col>
-                </Row>
+                            <Bar dataKey="enrolled" barSize={20} fill="#F4D03F" />
+                            <Bar dataKey="voted" barSize={20} fill="#52BE80" />
+                        </ComposedChart>
+                    </ResponsiveContainer>
+                </Col>
             );
         });
     }
@@ -84,13 +97,14 @@ const VotingByEthnicity = () => {
             {/* Title */}
             <Row>
                 <Col>
-                    <h3>Voting by Age</h3> 
+                    <h3>Voting by Ethnicity</h3> 
                 </Col>
             </Row>
 
             <br/>
-
-            {renderViz()}
+            <Row>
+                {renderViz()}
+            </Row>
             <br/>
             <Row>
                 <Col>
