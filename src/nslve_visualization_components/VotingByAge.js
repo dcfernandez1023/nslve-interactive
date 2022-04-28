@@ -89,7 +89,7 @@ const VotingByAge = () => {
         <Container fluid>
             {/* Title */}
             <Row>
-                <Col>
+                <Col style={{textAlign: "center"}}>
                     <h3>Voting by Age</h3> 
                 </Col>
             </Row>
@@ -97,15 +97,15 @@ const VotingByAge = () => {
             <br/>
 
             {renderAgeViz()}
-            <br/>
             <Row>
-                <Col>
+                <Col sm={2}></Col>
+                <Col sm={8}>
                     <p>
-                        This visualization contains <strong>small multiples</strong> of <strong> grouped bar charts</strong> that show the number of enrolled students in each age group vs. the number of 
+                    ℹ️ This visualization contains <strong>small multiples</strong> of <strong> grouped bar charts</strong> that show the number of enrolled students in each age group vs. the number of 
                         students that voted in each age group in the University of San Francisco in 2016, 2018, and 2020. 
                     </p>
                     <p>
-                        How to read this chart:
+                    🔎 How to read this chart:
                         <ul>
                             <li><strong>Small Multiple Grouped Bar Charts</strong>: Each of the 3 bar charts represents a year (2016, 2018, and 2020)</li>
                             <li><strong>X-axis</strong>: Each age group of students</li>
@@ -114,6 +114,7 @@ const VotingByAge = () => {
                         </ul>
                     </p>
                 </Col>
+                <Col sm={2}></Col>
             </Row>
         </Container>
     );

@@ -96,7 +96,7 @@ const VotingByEthnicity = () => {
         <Container fluid>
             {/* Title */}
             <Row>
-                <Col>
+                <Col style={{textAlign: "center"}}>
                     <h3>Voting by Ethnicity</h3> 
                 </Col>
             </Row>
@@ -105,23 +105,24 @@ const VotingByEthnicity = () => {
             <Row>
                 {renderViz()}
             </Row>
-            <br/>
             <Row>
-                <Col>
+                <Col sm={2}></Col>
+                <Col sm={8}>
                     <p>
-                        This visualization contains <strong>small multiples</strong> of <strong>grouped bar charts</strong> that show the number of enrolled students in from ethnicity vs. the number of 
-                        students that voted from each ethnicty in the University of San Francisco in 2016, 2018, and 2020. 
+                    ℹ️ This visualization contains <strong>small multiples</strong> of <strong>grouped bar charts</strong> that show the number of enrolled students in from ethnicity vs. the number of 
+                        students that voted from each ethnicty in the University of San Francisco in 2018, and 2020. <i>2016 was left out because it had no data on each individual ethnicity. </i>
                     </p>
                     <p>
-                        How to read this chart:
+                    🔎 How to read this chart:
                         <ul>
-                            <li><strong>Small Multiple Grouped Bar Charts</strong>: Each of the 3 bar charts represents a year (2016, 2018, and 2020)</li>
+                            <li><strong>Small Multiple Grouped Bar Charts</strong>: Each of the 3 bar charts represents a year (2018, and 2020)</li>
                             <li><strong>X-axis</strong>: The number of enrolled/voted students</li>
                             <li><strong>Y-axis</strong>: Each ethnicity</li>
                             <li><strong>Color</strong>: <strong style={{color: "#F4D03F"}}>Yellow</strong> maps to number of students <strong style={{color: "#F4D03F"}}>enrolled</strong> and <strong style={{color: "#52BE80"}}>Green</strong> maps to number of students that <strong style={{color: "#52BE80"}}>voted</strong></li>
                         </ul>
                     </p>
                 </Col>
+                <Col sm={2}></Col>
             </Row>
         </Container>
     );

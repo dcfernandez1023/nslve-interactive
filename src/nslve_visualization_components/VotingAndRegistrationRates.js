@@ -64,13 +64,13 @@ const VotingAndRegistrationRates = () => {
         <Container fluid>
             {/* Title */}
             <Row>
-                <Col>
+                <Col style={{textAlign: "center"}}>
                     <h3>Voting and Registration Rates</h3> 
                 </Col>
             </Row>
 
             {/* Visualization */}
-            <Row style={{height: "500px", width: "100%"}}>
+            <Row style={{height: "450px", width: "100%"}}>
                 <Col>
                     <ResponsiveContainer width="100%" height="100%">
                         <ComposedChart
@@ -110,13 +110,14 @@ const VotingAndRegistrationRates = () => {
             </Row>
             <br/>
             <Row>
-                <Col>
+                <Col sm={2}></Col>
+                <Col sm={8}>
                     <p>
-                        This visualization is a <strong>Grouped Bar + Line Timeline</strong> chart showing the total student <strong style={{color: "#EC7063"}}>enrollment</strong>, the number of students <strong style={{color: "#AF7AC5"}}>eligible</strong> to vote, the number of students who <strong style={{color: "#5499C7"}}>registered</strong> to vote, the number of students who <strong style={{color: "#48C9B0"}}>voted</strong>, 
+                    ℹ️ This visualization is a <strong>Grouped Bar + Line Timeline</strong> chart showing the total student <strong style={{color: "#EC7063"}}>enrollment</strong>, the number of students <strong style={{color: "#AF7AC5"}}>eligible</strong> to vote, the number of students who <strong style={{color: "#5499C7"}}>registered</strong> to vote, the number of students who <strong style={{color: "#48C9B0"}}>voted</strong>, 
                         and the <strong style={{color: "#F4D03F"}}>registration rate</strong>, <strong style={{color: "#DC7633"}}>voting rate of registered students</strong>, and <strong style={{color: "#5D6D7E"}}>voting rate of all students</strong> in the University of San Francisco in 2016, 2018, and 2020.
                     </p>
                     <p>
-                        How to read this chart:
+                    🔎 How to read this chart:
                         <ul>
                             <li><strong>X-axis</strong>: Each year (2016, 2018, 2020)</li>
                             <li><strong>Left Y-axis</strong>: The number of students (values of the bars)</li>
@@ -125,6 +126,7 @@ const VotingAndRegistrationRates = () => {
                         </ul>
                     </p>
                 </Col>
+                <Col sm={2}></Col>
             </Row>
         </Container>
     );

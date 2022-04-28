@@ -43,7 +43,7 @@ const VotingByMethod = () => {
         <Container fluid>
             {/* Title */}
             <Row>
-                <Col>
+                <Col style={{textAlign: "center"}}>
                     <h3>Voting by Method</h3> 
                 </Col>
             </Row>
@@ -72,11 +72,11 @@ const VotingByMethod = () => {
                 </LineChart>
             </ResponsiveContainer>
 
-            <br/>
             <Row>
-                <Col>
+                <Col sm={2}></Col>
+                <Col sm={8}>
                     <p>
-                        This visualization is a <strong>line chart</strong> that shows the number of students from the University of San Francisco that used 
+                    ℹ️ This visualization is a <strong>line chart</strong> that shows the number of students from the University of San Francisco that used 
                         <strong> Early Voting</strong>, 
                         <strong> In-Person on Election Day</strong> voting, 
                         <strong> Not-In-Person</strong> voting, 
@@ -85,7 +85,7 @@ const VotingByMethod = () => {
                         <strong> Provisional</strong>.
                     </p>
                     <p>
-                        How to read this chart:
+                    🔎 How to read this chart:
                         <ul>
                             <li><strong>X-axis</strong>: Each year (2016, 2018, and 2020)</li>
                             <li><strong>Y-axis</strong>: Number of students who used the method</li>
@@ -93,6 +93,7 @@ const VotingByMethod = () => {
                         </ul>
                     </p>
                 </Col>
+                <Col sm={2}></Col>
             </Row>
         </Container>
     );
