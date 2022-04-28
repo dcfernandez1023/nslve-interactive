@@ -60,12 +60,8 @@ function App() {
           </Col>
         </Row>
 
-        <br/>
-        <br/>
-        <br/>
-
         <Row>
-          <Col lg={12}>
+          <Col lg={12} style={{textAlign: "center"}}>
           <DropdownButton variant="info" id="dropdown-basic-button" title={selectedViz}>
             {dropDownValues.map((val) => {
               return (
