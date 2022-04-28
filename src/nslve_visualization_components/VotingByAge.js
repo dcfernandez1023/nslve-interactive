@@ -25,6 +25,7 @@ const VotingByAge = () => {
     const DATA = [
         {year: 2016, ageGroup: "18-21", enrolled: 4902, voted: 1978, rate: 40},
         {year: 2016, ageGroup: "22-24", enrolled: 1897, voted: 714, rate: 38},
+        {year: 0, ageGroup: "", enrolled: 0, voted: 0, rate: 0},
 
         {year: 2018, ageGroup: "18-21", enrolled: 5194, voted: 1856, rate: 36}, 
         {year: 2018, ageGroup: "22-24", enrolled: 1699, voted: 620, rate: 36},
